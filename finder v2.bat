@@ -821,7 +821,7 @@ start "" http://lg.he.net/#
 )
 if %choice%==22 (
 
-start "" http://geotraceroute.com/new.php?host=%ip% & start "" http://www.abuseipdb.com/check/%ip% & start "" http://search.yahoo.com/search?p=%ip% & start "" https://yandex.com/search/?text=%ip% & start "" https://duckduckgo.com/?q=%ip% & start "" http://www.iplocation.net/?query=%ip% & start"" http://www.zoomeye.org/searchResult?q=%ip% & start "" http://spyse.com/target/ip/%ip% & start "" http://www.shodan.io/host/%ip% & start "" http://viz.greynoise.io/ip/%ip% & start "" https://www.robtex.com/ip-lookup/%ip% & start "" http://www.scamadviser.com/check-website/%ip% & start "" http://hackertarget.com/reverse-ip-lookup/%ip% & start "" http://pentest-tools.com/website-vulnerability-scanning/website-scanner?url=%ip% & start "" https://ip8.com/?url=%ip% & start "" https://bgpview.io/ip/%ip% & start "" http://censys.io/ipv4?q=%ip%
+start http://iknowwhatyoudownload.com/en/peer/?ip=%ip% & start "" http://geotraceroute.com/new.php?host=%ip% & start "" http://www.abuseipdb.com/check/%ip% & start "" http://search.yahoo.com/search?p=%ip% & start "" https://yandex.com/search/?text=%ip% & start "" https://duckduckgo.com/?q=%ip% & start "" http://www.iplocation.net/?query=%ip% & start"" http://www.zoomeye.org/searchResult?q=%ip% & start "" http://spyse.com/target/ip/%ip% & start "" http://www.shodan.io/host/%ip% & start "" http://viz.greynoise.io/ip/%ip% & start "" https://www.robtex.com/ip-lookup/%ip% & start "" http://www.scamadviser.com/check-website/%ip% & start "" http://hackertarget.com/reverse-ip-lookup/%ip% & start "" http://pentest-tools.com/website-vulnerability-scanning/website-scanner?url=%ip% & start "" https://ip8.com/?url=%ip% & start "" https://bgpview.io/ip/%ip% & start "" http://censys.io/ipv4?q=%ip%
 
 )
 if %choice%==23 (
@@ -851,6 +851,8 @@ pause
 goto op7
 
 :op8
+start "" https://pimeyes.com/
+start "" http://www.pictriev.com/
 start "" https://www.flickr.com/map
 start "" https://www.csc2.ncsu.edu/faculty/healey/tweet_viz/tweet_app/ 
 start "" https://twitter.com/search-advanced
@@ -2814,6 +2816,7 @@ cls
 title All Shortcuts
 echo Welcome,
 echo Choose an option from a below list.
+echo 0. start.me
 echo 1. yandex
 echo 2. duckduckgo
 echo 3. yahoo
@@ -2856,7 +2859,11 @@ goto begin
 if %choice%=="" (
 goto se
 )  
-
+if %choice%==0 (
+start "" https://start.me/p/b56G5Q/search-engines
+start "" https://www.faganfinder.com/
+goto se
+)
 echo enter your  vulnerabilities search terms
 set /p search=
 set "search=%search: =+%"
@@ -2865,6 +2872,7 @@ set "search=%search: =+%"
 if %search%=="" (
 goto se
 )
+
 
 if %choice%==1 (
 start "" https://yandex.com/search/?text=%search%
@@ -2914,6 +2922,18 @@ start "" https://grep.app/search?q=%search%
 ) 
 if %choice%==16 (
 start "" https://searchcode.com/?q=%search%
+start "" https://www.codeproject.com/search.aspx?q=%search%
+start "" https://github.com/search?q=%search%
+start "" https://stackoverflow.com/search?q=%search%
+start "" https://www.google.com/search?tbm=bks&q=%search%
+start "" https://superuser.com/search?q=%search%
+start "" https://opensearch.krugle.org/document/search/?query=%search%
+start "" https://snipplr.com/all?search=%search%
+start "" https://www.openhub.net/p?query=%search%
+start "" https://publicwww.com/websites/%search%
+start "" https://scholar.google.com/scholar?hl=%search%
+start "" https://www.searchblogspot.com/search?q=%search%
+
 ) 
 if %choice%==17 (
 start "" https://www.nerdydata.com/reports/new
@@ -2951,7 +2971,11 @@ start "" https://www.etools.ch/searchSubmit.do?query=%search%
 start "" https://www.qwant.com/?q=%search%
 start "" https://www.yippy.com/search?query=%search%
 start "" https://search.carrot2.org/#/search/web/%search%
-
+start "" http://searchinfo.site
+start "" http://www.dogpile.com/serp?q=%search%
+start "" https://www.google.com/search?tbm=bks&q=%search%
+start "" https://scholar.google.com/scholar?hl=%search%
+start "" https://www.searchblogspot.com/search?q=%search%
 )   
 
   
@@ -2966,6 +2990,8 @@ cls
 title All Shortcuts
 echo Welcome,
 echo Choose an option from a below list.
+echo -14. (face recognition search || image search)
+echo -13. SatelliteMap 
 echo -12. network firewall status (See Which pc is on in your network)
 echo -11. exif (Photo geo location)
 echo -10. Google Map (Train/Flight/Car times)
@@ -3010,6 +3036,18 @@ if %choice%==16 (
 cls
 goto begin
 ) 
+
+if %choice%==-14 (
+cls
+start "" https://pimeyes.com/
+start "" http://www.pictriev.com/
+goto vu
+)
+if %choice%==-13 (
+cls
+start "" https://satellitemap.space/
+goto vu
+)
 if %choice%==-12 (
 cls
 FOR /L %%i IN (1,1,254) DO netsh -r 192.168.1.%%i advfirewall show allprofiles
@@ -4640,7 +4678,7 @@ cd \
 cd %temp%
 
 
-curl.exe -L https://downloads.novirusthanks.org/files/portables/hidden_process_finder_portable.zip > "hidden_process_finder_portable.zip"
+curl.exe -L "https://drive.google.com/uc?export=download&confirm=KBsu&id=1TwYSAJb2xFGTQBSR_pv1bsOIN5AB2h37" > "hidden_process_finder_portable.zip"
 
 cd\
 cd %temp%
