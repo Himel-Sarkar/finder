@@ -286,20 +286,22 @@ echo 1) Option 1 (Kill port)
 echo 2) Option 2 (Kill pid)
 echo 3) Option 3 (Kill file)
 echo 4) Option 4 (Know parent-location,processes,threads)
-echo 4) Option 5 (Exit)
+echo 5) Option 5 (Exit)
 echo -
 set /p op=Type option:
 if "%op%"=="1" goto op1
 if "%op%"=="2" goto op2
 if "%op%"=="3" goto op3
 if "%op%"=="4" goto op4
-if "%op%"=="5" goto op5
+if "%op%"=="5" goto op-exit
 if "%op%"=="" goto op4
 
 echo Please Pick an option:
 goto beginn
 
-
+:op-exit
+cls
+goto begin
 :op1
 for /f "tokens=5" %%a in ('netstat -aon ^| findstr ESTABLISHED') do tasklist /FI "PID eq %%a"
 
@@ -2803,7 +2805,8 @@ goto begin
 
 :se
 cls
-title All Shortcuts
+title Created By Himel Sarkar
+color 6E
 echo Welcome,
 echo Choose an option from a below list.
 echo 0. start.me
@@ -2977,7 +2980,8 @@ goto se:
 
 :vu
 cls
-title All Shortcuts
+title Created by Himel Sarkar
+color 5E
 echo Welcome,
 echo Choose an option from a below list.
 echo -14. (face recognition search || image search)
@@ -3166,6 +3170,7 @@ goto vu:
 :fixwin
 cls
 title Created by Himel Sarkar
+color 48
 echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo ! The script contains 4 procedures.
 echo ! The 1st procedure checks the disk - regular Checkdisk - 1 phase
@@ -3231,7 +3236,7 @@ goto begin
 
 
 :op16
-
+color 3b
 cls
 taskkill /F /IM  SbieCtrl.exe /T
 taskkill /F /IM  BijoyBayanno.exe /T
