@@ -131,6 +131,7 @@ goto begin
 
 
 :op1
+cls
 netstat -a -b -n -o 
 pause
 cls
@@ -284,7 +285,7 @@ echo =============
 echo -
 echo 1) Option 1 (Kill port)
 echo 2) Option 2 (Kill pid)
-echo 3) Option 3 (Kill file)
+echo 3) Option 3 (Kill exe)
 echo 4) Option 4 (Know parent-location,processes,threads)
 echo 5) Option 5 (Exit)
 echo -
@@ -716,7 +717,8 @@ SET /P ip=Enter your target IP:
 
 
 
-title All Shortcuts
+title Created by Himel Sarkar
+color 5E
 echo Welcome,
 echo Choose an option from a below list.
 echo 1. geotraceroute
@@ -726,7 +728,7 @@ echo 4. yandex ip check
 echo 5. duckduckgo
 echo 6. iplocation
 echo 7. zoomeye
-echo 8. spyse
+echo 8. spyse [Get Domain to Mail]
 echo 9. shodan
 echo 10. greynoise
 echo 11. robtex
@@ -908,9 +910,11 @@ goto begin
 
 :chat
 cls
+
 echo ========================
 echo # Dig into recycle bin # 
 echo ========================
+color 2e
 echo Select a task(any error press CTRL+c , y , Enter):
 echo =============
 echo -
@@ -1393,7 +1397,8 @@ goto chat
 
 :self
 cls
-title All Shortcuts
+title Created by Himel Sarkar
+color 6E
 echo Welcome to self destruction services, [Note,File,Email]
 echo Choose an option from a below list.
 echo 1. Privatty 
@@ -2806,7 +2811,8 @@ goto begin
 :se
 cls
 title Created By Himel Sarkar
-color 6E
+color 1b
+
 echo Welcome,
 echo Choose an option from a below list.
 echo 0. start.me
@@ -2965,7 +2971,7 @@ start "" https://www.qwant.com/?q=%search%
 start "" https://www.yippy.com/search?query=%search%
 start "" https://search.carrot2.org/#/search/web/%search%
 start "" http://searchinfo.site
-start "" http://www.dogpile.com/serp?q=%search%
+start "" https://duckduckgo.com/?q=!dogpile+%search%
 start "" https://www.google.com/search?tbm=bks&q=%search%
 start "" https://scholar.google.com/scholar?hl=%search%
 start "" https://www.searchblogspot.com/search?q=%search%
@@ -3269,6 +3275,8 @@ taskkill /F /IM SoftwareUpdate.exe /T
 taskkill /F /IM BitTorrentAntivirus.exe /T
 taskkill /F /IM uTorrent.exe /T
 taskkill /F /IM SbieCtrl.exe /T
+
+
 ipconfig /flushdns
 
 nbtstat –r
@@ -3282,6 +3290,12 @@ netsh int ip reset resettcpip.txt
 netsh winhttp reset proxy
 
 
+ipconfig /release
+ipconfig /renew
+arp -d *
+nbtstat -R
+nbtstat -RR
+ipconfig /registerdns
 
 tree  
 
@@ -3473,6 +3487,7 @@ cd C:\Windows\prefetch
 erase /Q *.*
 
 cls
+
 goto begin
 
  
@@ -3826,8 +3841,8 @@ goto rp3
 cls
 cd\ && cd $Recycle.Bin && dir /b /a && cd\
 cd $Recycle.Bin
-set /p op=Type your disk id frome above (Example S-1-5-21-440246471-2508580497-2753288854-1001):
-echo Wait for (1-120) seconds 
+set /p op=Copy-past your disk id frome above (Example S-1-5-21-440246471-2508580497-2753288854-1001):
+echo Wait for (1-10) minutes
 attrib -h -r -s /s /d
 cd *%op%*
 tree /F /A
