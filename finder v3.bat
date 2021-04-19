@@ -2687,8 +2687,9 @@ echo 5) Option 5(Mail)
 echo 6) Option 6(Mail)-[Receive]
 echo 7) Option 7(Hide ip)-[for servey sites]
 echo 8) Option 8(Valid fake info)-[for servey sites]
-echo 9) Option 9(Close all browser)
-echo 10) Option 10(Exit)
+echo 9) Option 9(phishing)
+echo 10) Option 10(Close all browser)
+echo 11) Option 11(Exit)
 echo -
 set /p op=Type option:
 if "%op%"=="1" goto sp1
@@ -2699,7 +2700,8 @@ if "%op%"=="5" goto sp5
 if "%op%"=="6" goto sp6
 if "%op%"=="7" goto sp7
 if "%op%"=="8" goto sp8
-if %op%==9 (
+if "%op%"=="9" goto sp9
+if %op%==10 (
 taskkill /F /IM chrome.exe 
 taskkill /F /IM brave.exe
 taskkill /F /IM firefox.exe
@@ -2709,7 +2711,7 @@ taskkill /F /IM msedge.exe
 cls
 goto s-m-c
 )
-if "%op%"=="10"  goto  sp10
+if "%op%"=="11"  goto  sp11
 if "%op%"=="" cls goto begin
 
 
@@ -2800,8 +2802,13 @@ start "" https://www.yellowpages.com/ && start "" http://www.fakeaddressgenerato
 echo you picked option 8
 cls
 goto s-m-c
-:sp10
-echo you picked option 10
+:sp9
+start "" http://www.smikta.net
+echo you picked option 9
+cls
+goto s-m-c
+:sp11
+echo you picked option 11
 cls
 goto begin
 
@@ -2962,6 +2969,7 @@ start "" https://www.qwant.com/?q=%search%
 
 )   
 if %choice%==22 (
+SET a=
 start "" https://yandex.com/search/?text=%search%
 start "" http://socialmention.com/search?q=%search%
 start "" https://www.social-searcher.com/google-social-search/?q=%search%
@@ -2972,8 +2980,11 @@ start "" https://www.yippy.com/search?query=%search%
 start "" https://search.carrot2.org/#/search/web/%search%
 start "" http://searchinfo.site
 start "" https://duckduckgo.com/?q=!dogpile+%search%
-start "" https://www.google.com/search?tbm=bks&q=%search%
-start "" https://scholar.google.com/scholar?hl=%search%
+start "" https://duckduckgo.com/?q=!googlebooks+%search%
+start "" https://duckduckgo.com/?q=!googlescholar+%search%
+start "" https://duckduckgo.com/?q=!wayback+%search%
+start "" https://duckduckgo.com/?q=!redditold+%search%
+
 start "" https://www.searchblogspot.com/search?q=%search%
 )   
 
@@ -2990,7 +3001,8 @@ title Created by Himel Sarkar
 color 5E
 echo Welcome,
 echo Choose an option from a below list.
-echo -14. (face recognition search || image search)
+echo -15. Ransomware-decryption-tools (PC/Mobile)
+echo -14. (face recognition search or image search)
 echo -13. SatelliteMap 
 echo -12. network firewall status (See Which pc is on in your network)
 echo -11. exif (Photo geo location)
@@ -3037,6 +3049,12 @@ cls
 goto begin
 ) 
 
+if %choice%==-15 (
+cls
+start "" https://www.emsisoft.com/ransomware-decryption-tools/
+
+goto vu
+)
 if %choice%==-14 (
 cls
 start "" https://pimeyes.com/
@@ -3237,7 +3255,7 @@ echo If SFC found some errors and could not repair, re-run the script after a re
 echo --------------------------------------------------------------------------------
 wuauclt / detectnow / updatenow
 timeout 10
-
+color AE
 goto begin
 
 
@@ -3487,7 +3505,7 @@ cd C:\Windows\prefetch
 erase /Q *.*
 
 cls
-
+color AE
 goto begin
 
  
