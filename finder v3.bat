@@ -921,13 +921,15 @@ echo -
 echo 1) Option 1 (network chat)
 echo 2) Option 2 (Online chat)
 echo 3) Option 3 (Self destruct)[3]
-echo 4) Option 4 (Exit)
+echo 4) Option 4 (Conversation Helper)[3]
+echo 5) Option 5 (Exit)
 echo -
 set /p op=Type option:
 if "%op%"=="1" goto ch11
 if "%op%"=="2" goto ch22
 if "%op%"=="3" goto self
 if "%op%"=="4" goto ch44
+if "%op%"=="5" goto ch55
 
 echo Please Pick an option:
 goto beginnn
@@ -1401,6 +1403,7 @@ title Created by Himel Sarkar
 color 6E
 echo Welcome to self destruction services, [Note,File,Email]
 echo Choose an option from a below list.
+
 echo 1. Privatty 
 echo 2. Securesha
 echo 3. Temp
@@ -1453,7 +1456,69 @@ goto chat
 goto self
 exit
 
+
+
+
+
 :ch44
+cls
+title Created by Himel Sarkar
+color 6E
+echo Welcome to Conversation helper 
+echo Choose an option from a below list.
+
+echo 1. Randomwordgenerator
+echo 2. Pickuplinegen
+echo 3. Commments
+echo 4. Close all browser
+echo 5. Exit
+
+
+ 
+echo enter your choice
+ 
+set /p choice=
+ 
+if %choice%==1 (
+start "" https://randomwordgenerator.com/
+)
+if %choice%==2 (
+start "" http://www.pickuplinegen.com/
+)
+if %choice%==3 (
+start "" https://www.commments.com/
+)
+
+
+if %choice%==4 (
+taskkill /F /IM chrome.exe 
+taskkill /F /IM brave.exe
+taskkill /F /IM firefox.exe
+taskkill /F /IM geckodriver.exe
+taskkill /F /IM chromedriver.exe
+taskkill /F /IM msedge.exe
+cls
+goto ch44
+)
+if %choice%==5 (
+cls
+goto chat
+)
+
+
+
+
+ cls
+goto chat
+exit
+
+
+
+
+
+
+
+:ch55
 cls
 echo you picked option 4
 goto begin
