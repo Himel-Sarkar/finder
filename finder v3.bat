@@ -922,14 +922,16 @@ echo 1) Option 1 (network chat)
 echo 2) Option 2 (Online chat)
 echo 3) Option 3 (Self destruct)[3]
 echo 4) Option 4 (Conversation Helper)[3]
-echo 5) Option 5 (Exit)
+echo 5) Option 5 (encrypt/decrypt and hide/show)[3]
+echo 6) Option 6 (Exit)
 echo -
 set /p op=Type option:
 if "%op%"=="1" goto ch11
 if "%op%"=="2" goto ch22
 if "%op%"=="3" goto self
 if "%op%"=="4" goto ch44
-if "%op%"=="5" goto ch55
+if "%op%"=="5" goto e-d-h-s
+if "%op%"=="6" goto ch66
 
 echo Please Pick an option:
 goto beginnn
@@ -1518,9 +1520,358 @@ exit
 
 
 
-:ch55
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COLOR ec
+:e-d-h-s
 cls
-echo you picked option 4
+echo Select a task:
+echo =============
+echo -
+echo 1) Option 1(Encrypt)
+echo 2) Option 2(Decrypt)
+echo 3) Option 3(Hide/Show file/folder)
+echo 4) Option 4(Exit)
+echo -
+set /p op=Type option:
+if "%op%"=="1" goto enc1
+if "%op%"=="2" goto enc2
+if "%op%"=="3" goto enc3
+if "%op%"=="4" goto chat
+if "%op%"==""  goto e-d-h-s
+
+
+echo Please Pick an option:
+goto e-d-h-s
+
+
+:enc1
+
+cls
+setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
+title Encrypt
+color a
+:mainmenu
+set savefile=on
+::set Encrypt=Nothing
+(set CHAR[a]=UDFM45) & (set CHAR[b]=H21DGF) & (set CHAR[c]=FDH56D) & (set CHAR[d]=FGS546) & (set CHAR[e]=JUK4JH)
+(set CHAR[f]=ERG54S) & (set CHAR[g]=T5H4FD) & (set CHAR[h]=RG641G) & (set CHAR[i]=RG4F4D) & (set CHAR[j]=RT56F6)
+(set CHAR[k]=VCBC3B) & (set CHAR[l]=F8G9GF) & (set CHAR[m]=FD4CJS) & (set CHAR[n]=G423FG) & (set CHAR[o]=F45GC2)
+(set CHAR[p]=TH5DF5) & (set CHAR[q]=CV4F6R) & (set CHAR[r]=XF64TS) & (set CHAR[s]=X78DGT) & (set CHAR[t]=TH74SJ)
+(set CHAR[u]=BCX6DF) & (set CHAR[v]=FG65SD) & (set CHAR[w]=4KL45D) & (set CHAR[x]=GFH3F2) & (set CHAR[y]=GH56GF)
+(set CHAR[z]=45T1FG) & (set CHAR[1]=D4G23D) & (set CHAR[2]=GB56FG) & (set CHAR[3]=SF45GF) & (set CHAR[4]=P4FF12)
+(set CHAR[5]=F6DFG1) & (set CHAR[6]=56FG4G) & (set CHAR[7]=USGFDG) & (set CHAR[8]=FKHFDG) & (set CHAR[9]=IFGJH6)
+(set CHAR[0]=87H8G7) & (set CHAR[@]=G25GHF) & (set CHAR[#]=45FGFH) & (set CHAR[$]=75FG45) & (set CHAR[*]=54GDH5)
+(set CHAR[(]=45F465) & (set CHAR[.]=HG56FG) & (set CHAR[,]=DF56H4) & (set CHAR[-]=F5JHFH) & (set CHAR[ ]=SGF4HF)
+(set CHAR[\]=45GH45) & (set CHAR[/]=56H45G)
+echo Enter a string to encrypt:
+set /p Encrypt=
+cls
+set Encrypt2=%Encrypt%
+set "EncryptOut="
+:encrypt2
+set char=%Encrypt2:~0,1%
+set Encrypt2=%Encrypt2:~1%
+set EncryptOut=%EncryptOut%!CHAR[%char%]!
+if not "%Encrypt2%"=="" goto encrypt2
+echo Input string: %Encrypt%
+echo.
+echo Output string: %EncryptOut%
+set string=%EncryptOut%
+set temp_str=%string%
+set str_len=0
+:lengthloop
+if defined temp_str (
+set temp_str=%temp_str:~1%
+set /A str_len += 1
+goto lengthloop )
+echo.
+echo Output string is %str_len% characters long!
+if "%savefile%"=="on" echo.%EncryptOut%>>%~d0%~p0encrypted.txt
+pause
+
+
+cls
+goto e-d-h-s
+
+:enc2
+cls
+
+setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
+title Decrypt
+color a
+:mainmenu
+set savefile=on
+::set Decrypt=Nothing
+(set CHAR[UDFM45]=a) & (set CHAR[H21DGF]=b) & (set CHAR[FDH56D]=c) & (set CHAR[FGS546]=d) & (set CHAR[JUK4JH]=e)
+(set CHAR[ERG54S]=f) & (set CHAR[T5H4FD]=g) & (set CHAR[RG641G]=h) & (set CHAR[RG4F4D]=i) & (set CHAR[RT56F6]=j)
+(set CHAR[VCBC3B]=k) & (set CHAR[F8G9GF]=l) & (set CHAR[FD4CJS]=m) & (set CHAR[G423FG]=n) & (set CHAR[F45GC2]=o)
+(set CHAR[TH5DF5]=p) & (set CHAR[CV4F6R]=q) & (set CHAR[XF64TS]=r) & (set CHAR[X78DGT]=s) & (set CHAR[TH74SJ]=t)
+(set CHAR[BCX6DF]=u) & (set CHAR[FG65SD]=v) & (set CHAR[4KL45D]=w) & (set CHAR[GFH3F2]=x) & (set CHAR[GH56GF]=y)
+(set CHAR[45T1FG]=z) & (set CHAR[D4G23D]=1) & (set CHAR[GB56FG]=2) & (set CHAR[SF45GF]=3) & (set CHAR[P4FF12]=4)
+(set CHAR[F6DFG1]=5) & (set CHAR[56FG4G]=6) & (set CHAR[USGFDG]=7) & (set CHAR[FKHFDG]=8) & (set CHAR[IFGJH6]=9)
+(set CHAR[87H8G7]=0) & (set CHAR[G25GHF]=@) & (set CHAR[45FGFH]=#) & (set CHAR[75FG45]=$) & (set CHAR[54GDH5]=*)
+(set CHAR[45F465]=() & (set CHAR[HG56FG]=.) & (set CHAR[DF56H4]=,) & (set CHAR[F5JHFH]=-) & (set CHAR[SGF4HF]= )
+(set CHAR[45GH45]=\) & (set CHAR[56H45G]=/)
+echo Enter a string to decrypt:
+set /p Decrypt=
+cls
+set Decrypt2=%Decrypt%
+set "DecryptOut="
+:decrypt2
+set char=%Decrypt2:~0,6%
+set Decrypt2=%Decrypt2:~6%
+set DecryptOut=%DecryptOut%!CHAR[%char%]!
+if not "%Decrypt2%"=="" goto decrypt2
+echo Input string: %Decrypt%
+echo.
+echo Output string: %DecryptOut%
+set string=%DecryptOut%
+set temp_str=%string%
+set str_len=0
+:lengthloop
+if defined temp_str (
+set temp_str=%temp_str:~1%
+set /A str_len += 1
+goto lengthloop )
+echo.
+echo Output string is %str_len% characters long!
+if "%savefile%"=="on" echo.%DecryptOut%>>%~d0%~p0decrypted.txt
+pause
+
+
+
+
+cls
+goto e-d-h-s
+
+:enc3
+:call
+cls
+call :setWindowProperty
+call :creteFolder
+goto :main
+:setWindowProperty
+ title File/Folder Hide-Unhide App
+  mode con: cols=65 lines=22
+  color 2f
+goto :eof
+:creteFolder
+ set messageCode=welcome
+ set feedbackURL="https://www.youtube.com/channel/UCZwYYKY3PhVLhh-xNuxWneA/discussion"
+ set setupPath="C:\Users\%username%\Desktop\FFHide"
+ IF NOT EXIST %setupPath% (
+  cd "C:\Users\%username%\Desktop"
+  mkdir FFHide
+  attrib +S +H %setupPath%
+  cd %setupPath%
+  echo. >> log.txt
+ )
+goto :eof
+:main
+ cls
+ if "%messageCode%"=="welcome" (
+  call :welcomeMesssage
+ ) else if "%messageCode%"=="pathnotfounderror" (
+  call :pathnotfounderror
+ ) else if "%messageCode%"=="success" (
+  call :success
+ ) else if "%messageCode%"=="error" (
+  call :error
+ ) else if "%messageCode%"=="contact" (
+  call :contact
+ ) else (
+  call :error
+ )
+ echo [1] Hide
+ echo [2] Unhide
+ echo [3] Log History
+ echo [4] Contact Us
+ echo [5] Give Feedback
+ echo [6] Exit
+ echo *****************************************************************
+ set /p option="Enter your Choice: "
+
+ call :operation %option%
+
+goto :main
+:welcomeMesssage
+ cls
+ echo *****************************************************************
+ echo *       Welcome...!!                                            *
+ echo *       Here You can Hide/Unhide your File/Folder..!!           *
+ echo *       Choose option below                                     *  
+ echo *****************************************************************
+goto :eof
+:error  
+ cls
+ echo *****************************************************************
+ echo *       Sorry...!!                                              *
+ echo *       Choice is Incorrect..!!                                 *
+ echo *       Please Choose option below                              *  
+ echo ***************************************************************** 
+goto :eof 
+:success
+ cls
+ echo *****************************************************************
+ echo *       Congratulations...!!                                    *
+ echo *       Operation Done Successfully..!!                         *
+ echo *       Please Choose option below                              *  
+ echo *****************************************************************   
+goto :eof
+:pathnotfounderror
+ cls
+ echo *****************************************************************
+ echo *       Sorry...!!                                              *
+ echo *       File/Folder Does not Exists..!!                         *
+ echo *       Please Choose option below                              *  
+ echo *****************************************************************
+goto :eof
+:feedback
+ if exist "C:\Program Files\Mozilla Firefox\firefox.exe" (
+  start firefox.exe "%feedbackURL%"
+ ) else (
+  start iexplore "%feedbackURL%"
+ )
+ set messageCode=welcome
+goto :eof
+:exit
+exit
+:: errorcode401.blogspot.in
+:operation
+ if %~1==1 (
+  call :hide
+ ) else if %~1==2 (
+  call :unhide
+ ) else if %~1==3 (
+  call :log
+ ) else if %~1==4 (
+  set messageCode=contact
+ ) else if %~1==5 (
+  call :feedback
+ ) else if %~1==6 (
+  cls
+goto e-d-h-s
+
+ )else (
+  set messageCode=error
+ )
+goto :eof
+:hide
+ cls
+ set /p folderpath="Enter path of File/Folder to Hide : "
+  if exist "%folderpath%" (
+   attrib +h +s "%folderpath%"
+   cd %setupPath%
+   echo Operation: Hide     ^Date^&Time : %date% %time%    FolderPath: "%folderpath%" >> log.txt
+   set messageCode=success
+  ) else (
+   set messageCode=pathnotfounderror
+  )
+goto :eof
+:unhide
+ cls
+ set /p folderpath="Enter path of File/Folder to Unhide : "
+ if exist "%folderpath%" (
+  attrib -h -s "%folderpath%"
+  cd %setupPath%
+  echo Operation: Unhide   ^Date^&Time : %date% %time%    FolderPath: "%folderpath%" >> log.txt
+  set messageCode=success
+ ) else (
+  set messageCode=pathnotfounderror
+ )
+goto :eof
+:log
+ cd %setupPath%
+ start log.txt
+goto :eof
+:contact
+ cls
+ echo *****************************************************************
+ echo *       If you have any problem or you need any help            *
+ echo *       You can Contact Us by bolow  links                       *
+ echo *                                                               *  
+ echo *       Github     : https://github.com/Himel-Sarkar            *
+ echo *****************************************************************
+goto :eof
+:error  
+ cls
+ echo *****************************************************************
+ echo *       Sorry...!!                                              *
+ echo *       Choice is Incorrect..!!                                 *
+ echo *       Please Choose option below                              *  
+ echo ***************************************************************** 
+goto :eof 
+REM Code ended from here
+cls
+PAUSE
+goto e-d-h-s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:ch66
+cls
+echo you picked option 6
 goto begin
 
 
@@ -2869,6 +3220,8 @@ cls
 goto s-m-c
 :sp9
 start "" http://www.smikta.net
+start "" https://myshraidar.net/index.php
+start "" http://bugmenot.com/view/myshraidar.net
 echo you picked option 9
 cls
 goto s-m-c
@@ -3034,7 +3387,7 @@ start "" https://www.qwant.com/?q=%search%
 
 )   
 if %choice%==22 (
-SET a=
+
 start "" https://yandex.com/search/?text=%search%
 start "" http://socialmention.com/search?q=%search%
 start "" https://www.social-searcher.com/google-social-search/?q=%search%
@@ -3049,8 +3402,8 @@ start "" https://duckduckgo.com/?q=!googlebooks+%search%
 start "" https://duckduckgo.com/?q=!googlescholar+%search%
 start "" https://duckduckgo.com/?q=!wayback+%search%
 start "" https://duckduckgo.com/?q=!redditold+%search%
-
 start "" https://www.searchblogspot.com/search?q=%search%
+start "" https://www.peteyvid.com/index.php?q=%search%
 )   
 
   
@@ -3243,6 +3596,7 @@ start "" http://netbootcamp.org/pastesearch.html#search&gsc.tab=0&gsc.q=%v%
 start "" https://github.com/search?q=%v%
 start "" https://search.wikileaks.org/?query=%v%&exact_phrase=&any_of=&exclude_words=&document_date_start=&document_date_end=&released_date_start=&released_date_end=&new_search=True&order_by=most_relevant#results
 start "" https://securityonline.info/search_gcse/?q==%v%
+start "" https://www.peteyvid.com/index.php?q=%v%
 )  
 
   
