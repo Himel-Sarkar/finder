@@ -3095,17 +3095,19 @@ cls
 echo Select a task:
 echo =============
 echo -
-echo 1) Option 1(SMS)
-echo 2) Option 2(SMS)-[Receive]
-echo 3) Option 3(MMS)
-echo 4) Option 4(Call)
-echo 5) Option 5(Mail)
-echo 6) Option 6(Mail)-[Receive]
-echo 7) Option 7(Hide ip)-[for servey sites]
-echo 8) Option 8(Valid fake info)-[for servey sites]
-echo 9) Option 9(phishing)
-echo 10) Option 10(Close all browser)
-echo 11) Option 11(Exit)
+echo 1)  Option  1(SMS)
+echo 2)  Option  2(SMS)-[Receive]
+echo 3)  Option  3(MMS)
+echo 4)  Option  4(Call)
+echo 5)  Option  5(Mail)
+echo 6)  Option  6(Mail)-[Receive]
+echo 7)  Option  7(Hide ip)-[for servey sites]
+echo 8)  Option  8(Valid fake info)-[for servey sites]
+echo 9)  Option  9(phishing)
+echo 10) Option 10(Spoof-mac)
+echo 11) Option 11(sidejack)[windows]
+echo 12) Option 12(Close all browser)
+echo 13) Option 13(Exit)
 echo -
 set /p op=Type option:
 if "%op%"=="1" goto sp1
@@ -3117,7 +3119,9 @@ if "%op%"=="6" goto sp6
 if "%op%"=="7" goto sp7
 if "%op%"=="8" goto sp8
 if "%op%"=="9" goto sp9
-if %op%==10 (
+if "%op%"=="10" goto spoof-mac
+if "%op%"=="11" goto sidejack
+if %op%==12 (
 taskkill /F /IM chrome.exe 
 taskkill /F /IM brave.exe
 taskkill /F /IM firefox.exe
@@ -3127,7 +3131,7 @@ taskkill /F /IM msedge.exe
 cls
 goto s-m-c
 )
-if "%op%"=="11"  goto  sp11
+if "%op%"=="13"  goto  sp13
 if "%op%"=="" cls goto begin
 
 
@@ -3225,7 +3229,127 @@ start "" http://bugmenot.com/view/myshraidar.net
 echo you picked option 9
 cls
 goto s-m-c
-:sp11
+
+
+
+
+:spoof-mac
+cls
+echo checking file structure...
+if exist "%temp%\SMAC\SMAC.exe" (
+if exist "%temp%\SMAC\SMAC.exe" (
+cd \
+
+cd %Temp%\SMAC\
+
+start SMAC.exe
+
+cls
+echo Serial key SMC2U-00C8-4004-0401-CB5A-00007096
+
+pause
+taskkill /F /IM SMAC.exe /T
+cls
+goto s-m-c
+goto ok
+)
+)
+
+if not exist "%temp%\SMAC.zip" (
+if not exist "%temp%\SMAC.zip" (
+goto download
+)
+)
+if not exist "%temp%\SMAC.zip" (
+goto download
+)
+)
+
+if not exist "%temp%\SMAC.zip" (
+goto download
+)
+)
+:download
+echo downloading missing files.
+cd \
+cd %temp%
+
+
+curl -L "https://www.googleapis.com/drive/v3/files/1KeTy8h3Vqpj5yU4D81Xt_9WRrfKpYtxG?alt=media&key=AIzaSyD5joKOoWWnjMLeGX8AYoI0Q4jJUnpjvD8" > "SMAC.zip"
+
+cd\
+cd %temp%
+
+
+
+set mypath=%cd%\SMAC.zip
+Call :UnZipFile "%temp%" "%mypath%"
+exit /b
+
+:UnZipFile <ExtractTo> <newzipfile>
+set vbs="%temp%\_.vbs"
+if exist %vbs% del /f /q %vbs%
+>>%vbs%  echo Set fso = CreateObject("Scripting.FileSystemObject")
+>>%vbs% echo If NOT fso.FolderExists(%1) Then
+>>%vbs% echo fso.CreateFolder(%1)
+>>%vbs% echo End If
+>>%vbs% echo set objShell = CreateObject("Shell.Application")
+>>%vbs% echo set FilesInZip=objShell.NameSpace(%2).items
+>>%vbs% echo objShell.NameSpace(%1).CopyHere(FilesInZip)
+>>%vbs% echo Set fso = Nothing
+>>%vbs% echo Set objShell = Nothing
+cscript //nologo %vbs%
+if exist %vbs% del /f /q %vbs%
+
+
+
+cd \
+
+cd %Temp%\SMAC\ 
+xcopy "crack\.DS_Store" ".DS_Store" /s/h/e/k/f/c/y
+
+start SMAC.exe
+cd\
+cd %Temp%
+
+erase /Q *.*
+cls
+echo Serial key SMC2U-00C8-4004-0401-CB5A-00007096
+echo for close it(SMAC Changer) press enter
+pause
+taskkill /F /IM SMAC.exe /T
+cls
+goto s-m-c
+
+:ok
+echo Install successful
+
+:sidejack
+cls
+echo https://github.com/downloads/codebutler/firesheep/firesheep-0.1-1.xpi
+
+echo 3.6.11 
+echo https://master.dl.sourceforge.net/project/portableapps/Mozilla%20Firefox%2C%20Portable%20Ed./Mozilla%20Firefox%2C%20Portable%20Edition%203.6.11/FirefoxPortable_3.6.11_English.paf.exe
+
+echo about:config
+echo xpinstall.signatures.required      "False"
+
+echo \FirefoxPortable\Data\profile\extensions
+
+echo Hamster Sidejacking Tool 2.0.0.zip
+echo https://drive.google.com/file/d/1vQD6SU6cEp5NkiPbhSV0wOspp6lK5wkA/view?usp=sharing
+
+
+start "" https://drive.google.com/file/d/1vQD6SU6cEp5NkiPbhSV0wOspp6lK5wkA/view?usp=sharing
+
+
+pause
+
+cls
+goto s-m-c
+
+
+:sp13
 echo you picked option 11
 cls
 goto begin
@@ -3736,204 +3860,112 @@ ipconfig /registerdns
 
 tree  
 
+timeout 10
 
 
-rd %prefetch% /s /q
-md %prefetch%
-
-del C:\Windows\Temp\*.* /Q
-del /q /f /s “%USERPROFILE%\AppData\Local\Temp\*.*" /Q
-del C:\Windows\Prefetch\*.* /Q
-
+RD "%TMP%" /S /Q
+DEL "%TMP%\*" /F /S /Q
+ATTRIB "%USERPROFILE%\AppData\Local\Microsoft\Windows\Temporary Internet Files\*" -H -S
+DEL "%USERPROFILE%\AppData\Local\Microsoft\Windows\Temporary Internet Files\*" /F /S /Q
+del C:\Windows\Temp\*.* /Q /S
+del C:\Windows\Prefetch\*.* /Q /S
 
 if %os%==Windows_NT goto WINNT
-
 goto NOCON
 
- 
-
 :WINNT
-
 echo .Using a Windows NT based system
-
 echo ..%computername%
 
- 
-
 echo Deleting Temporary Internet Files
-
-del /q /f /s “%USERPROFILE%\AppData\Local\Microsoft\Windows\Temporary Internet Files\*.*”
-
-del /q /f /s “%USERPROFILE%\AppData\Local\Microsoft\Windows\INetCache\*.*”
-
-del /q /f /s “%temp%\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\Temporary Internet Files\*.*"
 echo deleted!
 
- 
-
-echo Deleting Prefetch folder data
-
-del /q /f /s “%systemroot%\Prefetch\*.*”
-
+echo Deleting Downloads Folder Files
+del /q /f /s "%USERPROFILE%\Downloads\*.*"
 echo deleted!
-
- 
-
-echo Deleting Temp folder data
-
-del /q /f /s “%systemroot%\Temp\*.*”
-
-echo deleted!
-
- 
 
 echo Deleting Cookies
-
-del /q /f /s “%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Cookies\*.*”
-
-del /q /f /s “%USERPROFILE%\AppData\LocalLow\Microsoft\Internet Explorer\DOMStore\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Cookies\*.*"
+del /q /f /s "%USERPROFILE%\AppData\LocalLow\Microsoft\Internet Explorer\DOMStore\*.*"
 echo deleted!
-
- 
 
 echo Deleting History
-
-del /q /f /s “%USERPROFILE%\AppData\Local\Microsoft\Windows\History\*.*”
-
-del /q /f /s “%USERPROFILE%\AppData\Local\Microsoft\Internet Explorer\Recovery\Active\*.*”
-
-del /q /f /s “%USERPROFILE%\AppData\Local\Microsoft\Internet Explorer\Recovery\Last Active\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\History\*.*"
+del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Internet Explorer\Recovery\Active\*.*"
+del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Internet Explorer\Recovery\Last Active\*.*"
 echo deleted!
-
- 
 
 echo Deleting Windows Internet Explorer Dat Files
-
-del /q /f /s “%USERPROFILE%\AppData\Roaming\Microsoft\Windows\PrivacIE\*.*”
-
-del /q /f /s “%USERPROFILE%\AppData\Roaming\Microsoft\Windows\IECompatCache\*.*”
-
-del /q /f /s “%USERPROFILE%\AppData\Roaming\Microsoft\Windows\IETldCache\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\PrivacIE\*.*"
+del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\IECompatCache\*.*"
+del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\IETldCache\*.*"
 echo deleted!
-
- 
 
 echo Deleting Windows Error Reporting Files
-
-del /q /f /s “%USERPROFILE%\AppData\Local\Microsoft\Windows\WER\ReportArchive\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Windows\WER\ReportArchive\*.*"
 echo deleted!
-
- 
 
 echo Deleting Flash Player Temp Files
-
-del /q /f /s “%USERPROFILE%\AppData\Roaming\Macromedia\Flash Player\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\Roaming\Macromedia\Flash Player\*.*"
 echo deleted!
-
- 
 
 echo Deleting Remote Desktop Cache
-
-del /q /f /s “%USERPROFILE%\AppData\Local\Microsoft\Terminal Server Client\Cache\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\Local\Microsoft\Terminal Server Client\Cache\*.*"
 echo deleted!
-
- 
 
 echo Deleting Profile Temp Files
-
-del /q /f /s “%USERPROFILE%\AppData\Local\Temp\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\Local\Temp\*.*"
 echo deleted!
 
- 
+echo Delete misc Files in Profile
+del /q /f /s "%USERPROFILE%\webct_upload_applet.properties"
+del /q /f /s "%USERPROFILE%\g2mdlhlpx.exe"
+del /q /f /s "%USERPROFILE%\fred"
+rmdir /s /q "%USERPROFILE%\temp"
+rmdir /s /q "%USERPROFILE%\WebEx"
+rmdir /s /q "%USERPROFILE%\.gimp-2.4"
+rmdir /s /q "%USERPROFILE%\.realobjects"
+rmdir /s /q "%USERPROFILE%\.thumbnails"
+rmdir /s /q "%USERPROFILE%\Bluetooth Software"
+rmdir /s /q "%USERPROFILE%\Office Genuine Advantage"
+echo deleted!
 
 echo Deleting FireFox Cache
 
- 
-
-pushd “%USERPROFILE%\AppData\Local\Mozilla\Firefox\Profiles\*.default\”
-
-del /q /f /s “Cache\*.*”
-
+pushd "%USERPROFILE%\AppData\Local\Mozilla\Firefox\Profiles\*.default\"
+del /q /f /s "Cache\*.*"
 popd
 
- 
-
 echo deleted!
-
- 
 
 echo Deleting User Profile Adobe Temp Files
-
-del /q /f /s “%USERPROFILE%\AppData\LocalLow\Adobe\Acrobat\9.0\Search\*.*”
-
-del /q /f /s “%USERPROFILE%\AppData\LocalLow\Adobe\Common\Media Cache Files\*.*”
-
-del /q /f /s “%USERPROFILE%\AppData\LocalLow\Adobe\Common\Media Cache\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\LocalLow\Adobe\Acrobat\9.0\Search\*.*"
+del /q /f /s "%USERPROFILE%\AppData\LocalLow\Adobe\Common\Media Cache Files\*.*"
+del /q /f /s "%USERPROFILE%\AppData\LocalLow\Adobe\Common\Media Cache\*.*"
 echo deleted!
-
- 
 
 echo Deleting User Office Recent Files
-
-del /q /f /s “%USERPROFILE%\AppData\Roaming\Microsoft\Office\Recent\*.*”
-
+del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Office\Recent\*.*"
 echo deleted!
-
- 
 
 echo Deleting User Office TMP Files
-
-del /q /f /s “%USERPROFILE%\AppData\Roaming\Microsoft\Office\*.tmp”
-
+del /q /f /s "%USERPROFILE%\AppData\Roaming\Microsoft\Office\*.tmp"
 echo deleted!
 
- 
 
-echo Emptying Recycle Bin
+echo Recycle bin anouther necessary folder remove
+rmdir %systemdrive%\$Recycle.bin\ /s /q
+rmdir “%systemroot%\Prefetch\” /s /q
+mkdir "%systemroot%\Prefetch\"
 
-del %systemdrive%\$Recycle.bin\*.* /f /s /q
 
-echo emptied!
-
- 
-
-echo Deleting Recent Items
-
-del /q /f /s “%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\*.tmp”
-
-echo deleted!
-cd\
-cd C:\Windows\Temp
-erase /Q *.*
-
-cd\
-cd %temp% 
-erase /Q *.*
-
-cd\
-cd C:\Windows\prefetch
-erase /Q *.*
-
-cls
-color AE
 goto begin
 
- 
-
 :NOCON
+echo Error...Invalid Operating System...
+echo Error...No actions were made...
 
-echo Error…Invalid Operating System…
-
-echo Error…No actions were made…
 
 goto begin
 
