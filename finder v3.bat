@@ -3364,21 +3364,21 @@ color 1b
 
 echo Welcome,
 echo Choose an option from a below list.
-echo 0. start.me
-echo 1. yandex
-echo 2. duckduckgo
-echo 3. yahoo
-echo 4. google
-echo 5. bing
-echo 6. social-searcher
-echo 7. facebook
-echo 8. reddit
-echo 9. twitter
+echo  0. List of search engines[Dark Web,start.me] 
+echo  1. yandex
+echo  2. duckduckgo
+echo  3. yahoo
+echo  4. google
+echo  5. bing
+echo  6. social-searcher
+echo  7. facebook
+echo  8. reddit
+echo  9. twitter
 echo 10. netbootcamp(pastesearch)[use proxy]
 echo 11. inteltechniques(pastesearch)
 echo 12. github(find framework's)
 echo 13. wikileaks
-echo 14. socialmention
+echo 14. Dark Web (Bulk Search)
 echo 15. grep.app(code search)
 echo 16. searchcode(code search)
 echo 17. nerdydata(manual code search)
@@ -3386,7 +3386,7 @@ echo 18. faganfinder
 echo 19. weboas(torrent+!"all"+video)
 echo 20. National Search Engines()
 echo 21. Meta Search Engines()
-echo 22. Bulk
+echo 22. Bulk[()]
 echo 23. Close all browser
 echo 24. Exit
 set /p choice=Enter your option: 
@@ -3408,8 +3408,10 @@ if %choice%=="" (
 goto se
 )  
 if %choice%==0 (
+
 start "" https://start.me/p/b56G5Q/search-engines
-start "" https://www.faganfinder.com/
+start "" http://oleuniversity.com/
+start "" https://duckduckgo.com/?q=TorLinks&t=brave&ia=web&iai=r1-14&page=2&sexp=%7B%22biaexp%22%3A%22b%22%2C%22msvrtexp%22%3A%22b%22%7D
 goto se
 )
 echo enter your  vulnerabilities search terms
@@ -3462,7 +3464,13 @@ if %choice%==13 (
 start "" https://search.wikileaks.org/?query=%search%&exact_phrase=&any_of=&exclude_words=&document_date_start=&document_date_end=&released_date_start=&released_date_end=&new_search=True&order_by=most_relevant#results
 ) 
 if %choice%==14 (
-start "" http://socialmention.com/search?q=%search%
+color 4E
+start brave --incognito --tor "https://ahmia.fi/search/?q=%search%"
+start brave --incognito --tor "https://onionsearchengine.com/search.php?search=%search%"
+start brave --incognito --tor "https://darksearch.io/search?query=%search%"
+start brave --incognito --tor "https://tor.link/?q=%search%"
+start brave --incognito --tor "https://boogle.store/search?q=%search%&p_num=1&s_type=all"
+//start "" http://socialmention.com/search?q=%search%
 )
 
 if %choice%==15 (
@@ -3508,19 +3516,20 @@ start "" https://www.izito.com/?q=%search%
 start "" https://www.alltheinternet.com/?q=%search%
 start "" https://www.etools.ch/searchSubmit.do?query=%search%
 start "" https://www.qwant.com/?q=%search%
+start "" https://www.metacrawler.com/serp?q=%search%
 
 )   
 if %choice%==22 (
-
+color 2E
 start "" https://yandex.com/search/?text=%search%
 start "" http://socialmention.com/search?q=%search%
 start "" https://www.social-searcher.com/google-social-search/?q=%search%
 start "" https://inteltechniques.com/pastesearch.html?q=%search%
-start "" https://www.etools.ch/searchSubmit.do?query=%search%
 start "" https://www.qwant.com/?q=%search%
 start "" https://www.yippy.com/search?query=%search%
 start "" https://search.carrot2.org/#/search/web/%search%
 start "" http://searchinfo.site
+start "" https://www.aiosearch.com/search/5/File%20Sharing/%search%
 start "" https://duckduckgo.com/?q=!dogpile+%search%
 start "" https://duckduckgo.com/?q=!googlebooks+%search%
 start "" https://duckduckgo.com/?q=!googlescholar+%search%
@@ -3528,6 +3537,7 @@ start "" https://duckduckgo.com/?q=!wayback+%search%
 start "" https://duckduckgo.com/?q=!redditold+%search%
 start "" https://www.searchblogspot.com/search?q=%search%
 start "" https://www.peteyvid.com/index.php?q=%search%
+start "" https://www.etools.ch/searchSubmit.do?query=%search%
 )   
 
   
@@ -3556,7 +3566,7 @@ echo -6.  Dnsdumpster
 echo -5.  windy (°C-Map)
 echo -4.  aprs (Map)
 echo -3.  Identity (Domain Name, Organization Name, etc), a Certificate Fingerprint (SHA-1 or SHA-256)
-echo -2.  wigle(wifi-BSSID on map )
+echo -2.  wigle(wifi-BSSID on map of mac spoofing) 
 echo -1.  cybermap(Attack Map)
 echo  0.  online nmap(manually scan)
 echo  1.  Common Vulnerabilities and Exposures
@@ -4013,14 +4023,14 @@ rmdir %systemdrive%\$Recycle.bin\ /s /q
 rmdir “%systemroot%\Prefetch\” /s /q
 mkdir "%systemroot%\Prefetch\"
 
-
+cls
 goto begin
 
 :NOCON
 echo Error...Invalid Operating System...
 echo Error...No actions were made...
 
-
+cls
 goto begin
 
 
