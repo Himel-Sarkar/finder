@@ -3378,7 +3378,7 @@ echo 10. netbootcamp(pastesearch)[use proxy]
 echo 11. inteltechniques(pastesearch)
 echo 12. github(find framework's)
 echo 13. wikileaks
-echo 14. Dark Web (Bulk Search)
+echo 14. Dark Web Search ()
 echo 15. grep.app(code search)
 echo 16. searchcode(code search)
 echo 17. nerdydata(manual code search)
@@ -3386,7 +3386,7 @@ echo 18. faganfinder
 echo 19. weboas(torrent+!"all"+video)
 echo 20. National Search Engines()
 echo 21. Meta Search Engines()
-echo 22. Bulk[()]
+echo 22. Bulk [()]
 echo 23. Close all browser
 echo 24. Exit
 set /p choice=Enter your option: 
@@ -3470,7 +3470,7 @@ start brave --incognito --tor "https://onionsearchengine.com/search.php?search=%
 start brave --incognito --tor "https://darksearch.io/search?query=%search%"
 start brave --incognito --tor "https://tor.link/?q=%search%"
 start brave --incognito --tor "https://boogle.store/search?q=%search%&p_num=1&s_type=all"
-//start "" http://socialmention.com/search?q=%search%
+
 )
 
 if %choice%==15 (
@@ -3526,7 +3526,6 @@ start "" http://socialmention.com/search?q=%search%
 start "" https://www.social-searcher.com/google-social-search/?q=%search%
 start "" https://inteltechniques.com/pastesearch.html?q=%search%
 start "" https://www.qwant.com/?q=%search%
-start "" https://www.yippy.com/search?query=%search%
 start "" https://search.carrot2.org/#/search/web/%search%
 start "" http://searchinfo.site
 start "" https://www.aiosearch.com/search/5/File%20Sharing/%search%
@@ -3553,6 +3552,7 @@ title Created by Himel Sarkar
 color 5E
 echo Welcome,
 echo Choose an option from a below list.
+echo -16. Bulk password list generator (For Brute Force)
 echo -15. Ransomware-decryption-tools (PC/Mobile)
 echo -14. (face recognition search or image search)
 echo -13. SatelliteMap 
@@ -3600,6 +3600,7 @@ if %choice%==16 (
 cls
 goto begin
 ) 
+
 
 if %choice%==-15 (
 cls
@@ -3653,6 +3654,15 @@ goto vu
 )
 if %choice%==0 (
 start "" http://nmap.online-domain-tools.com/
+goto vu
+)
+
+if %choice%==-16 (
+cls
+start "" https://www.randomlists.com/random-password
+start "" https://onlinerandomtools.com/generate-random-password/
+start "" https://easy-calc.com/PasswordGenerator/Bulk-Password-Generator
+start "" https://leopathu.com/verify-email
 goto vu
 )
 echo enter your  vulnerabilities search terms
