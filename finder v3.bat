@@ -854,7 +854,8 @@ start "" http://socialmention.com/search?q=
 start "" https://brandmentions.com/socialmention/ 
 start "" https://www.social-searcher.com/google-social-search/ 
 start "" http://usersearch.org/
-
+start "" https://openknowledgemaps.org/
+start "" https://onemilliontweetmap.com/
 SET choice=
 SET /p choice=Would u like to close your all browser? [N]: 
 IF NOT '%choice%'=='' SET choice=%choice:~0,1%
@@ -3382,7 +3383,7 @@ echo 14. Dark Web Search ()
 echo 15. grep.app(code search)
 echo 16. searchcode(code search)
 echo 17. nerdydata(manual code search)
-echo 18. faganfinder
+echo 18. faganfinder,openknowledgemaps[pdf]
 echo 19. weboas(torrent+!"all"+video)
 echo 20. National Search Engines()
 echo 21. Meta Search Engines()
@@ -3441,6 +3442,7 @@ start "" https://www.bing.com/search?q=%search%
 )
 if %choice%==6 (
 start "" https://www.social-searcher.com/google-social-search/?q=%search%
+
 )
 if %choice%==7 (
 start "" http://m.facebook.com/search/top/?q=%search%
@@ -3496,6 +3498,7 @@ start "" https://www.nerdydata.com/reports/new
 )
 if %choice%==18 (
 start "" https://www.faganfinder.com/
+start "" https://openknowledgemaps.org/
 )
 if %choice%==19 (
 start "" https://weboas.is/
@@ -3526,7 +3529,6 @@ start "" http://socialmention.com/search?q=%search%
 start "" https://www.social-searcher.com/google-social-search/?q=%search%
 start "" https://inteltechniques.com/pastesearch.html?q=%search%
 start "" https://www.qwant.com/?q=%search%
-start "" https://search.carrot2.org/#/search/web/%search%
 start "" http://searchinfo.site
 start "" https://www.aiosearch.com/search/5/File%20Sharing/%search%
 start "" https://duckduckgo.com/?q=!dogpile+%search%
@@ -3537,6 +3539,7 @@ start "" https://duckduckgo.com/?q=!redditold+%search%
 start "" https://www.searchblogspot.com/search?q=%search%
 start "" https://www.peteyvid.com/index.php?q=%search%
 start "" https://www.etools.ch/searchSubmit.do?query=%search%
+start "" https://search.carrot2.org/#/search/web/%search%/treemap
 )   
 
   
@@ -3825,6 +3828,7 @@ goto begin
 :op16
 color 3b
 cls
+  
 taskkill /F /IM  SbieCtrl.exe /T
 taskkill /F /IM  BijoyBayanno.exe /T
 taskkill /F /IM "Creative Cloud.exe" /T
