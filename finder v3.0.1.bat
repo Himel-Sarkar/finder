@@ -3684,21 +3684,33 @@ echo enter your  vulnerabilities search terms
 set /p v=
 set "v=%v: =+%"
 if %choice%==-9 (
-start "" https://www.google.com/search?q=%v%+site:flightradar24.com
-start "" https://www.google.com/search?as_q=%v%"&"as_sitesearch=flightradar24.com
+start brave --incognito --tor "https://www.google.com/search?q=%v%+site:flightradar24.com"
+start brave --incognito --tor https://www.google.com/search?as_q=%v%"&"as_sitesearch=flightradar24.com
 
+start brave --incognito --tor "https://www.google.com/search?q=%v%+site:aviationdb.com"
+start brave --incognito --tor https://www.google.com/search?as_q=%v%"&"as_sitesearch=aviationdb.com
+
+start brave --incognito --tor "https://www.google.com/search?q=%v%+site:liveatc.net"
+start brave --incognito --tor  https://www.google.com/search?as_q=%v%"&"as_sitesearch=liveatc.net
+
+start brave --incognito --tor "https://www.google.com/search?q=%v%+site:planespotters.net"
+start brave --incognito --tor https://www.google.com/search?as_q=%v%"&"as_sitesearch=planespotters.net
+
+start brave --incognito --tor "https://www.google.com/search?q=%v%+site:globe.adsbexchange.com"
+start brave --incognito --tor  https://www.google.com/search?as_q=%v%"&"as_sitesearch=globe.adsbexchange.com
+pause
 goto vu
 )
 
 if %choice%==-8 (
-start "" https://www.google.com/search?as_q=%v%"&"as_sitesearch=marinetraffic.com
-start "" https://www.google.com/search?q=%v%+site:marinetraffic.com
-start "" https://www.google.com/search?as_q=%v%"&"as_sitesearch=submarinecablemap.com
-start "" https://www.google.com/search?q=%v%+site:submarinecablemap.com
-start "" https://www.google.com/search?as_q=%v%"&"as_sitesearch=openinframap.org
-start "" https://www.google.com/search?q=%v%+site:openinframap.org
-start "" https://www.google.com/search?as_q=%v%"&"as_sitesearch=map.snapchat.com
-start "" https://www.google.com/search?q=%v%+site:map.snapchat.com     
+start brave --incognito --tor  https://www.google.com/search?as_q=%v%"&"as_sitesearch=marinetraffic.com
+start brave --incognito --tor "https://www.google.com/search?q=%v%+site:marinetraffic.com"
+start brave --incognito --tor  https://www.google.com/search?as_q=%v%"&"as_sitesearch=submarinecablemap.com
+start brave --incognito --tor "https://www.google.com/search?q=%v%+site:submarinecablemap.com"
+start brave --incognito --tor  https://www.google.com/search?as_q=%v%"&"as_sitesearch=openinframap.org
+start brave --incognito --tor "https://www.google.com/search?q=%v%+site:openinframap.org"
+start brave --incognito --tor  https://www.google.com/search?as_q=%v%"&"as_sitesearch=map.snapchat.com
+start brave --incognito --tor "https://www.google.com/search?q=%v%+site:map.snapchat.com"     
 goto vu
 )
 if %choice%==1 (
@@ -5634,3 +5646,4 @@ goto begin
 
 
 
+                                                                                                                                                                         
