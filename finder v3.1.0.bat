@@ -649,6 +649,9 @@ goto begin
 
 
 :op6
+cls
+start  cmd.exe @cmd /k "title Microsoft Windows Based Script Host Running executables list & tasklist | findstr /I "Microsoft Windows Based Script Host" &  timeout 60 & exit"
+
 echo checking file structure...
 if exist "%temp%\x64\ProcessHacker.exe" (
 if exist "%temp%\x64\ProcessHacker.exe" (
@@ -3581,6 +3584,8 @@ start "" https://www.nerdydata.com/reports/new
 
 if %choice%==19 (
 start "" https://weboas.is/
+start "" https://freecourseweb.com
+start "" https://torrentgalaxy.to/
 )
 if %choice%==20 (
 
@@ -3604,7 +3609,7 @@ start "" https://www.metacrawler.com/serp?q=%search%
 if %choice%==22 (
 color 2E
 start "" https://yandex.com/search/?text=%search%
-start "" https://metager.org/meta/meta.ger3?eingabe=%search%
+
 start "" https://www.social-searcher.com/google-social-search/?q=%search%
 start "" http://netbootcamp.org/pastesearch.html#search"&"gsc.tab=0"&"gsc.q=%search%
 start "" https://www.qwant.com/?q=%search%
@@ -3618,11 +3623,11 @@ start "" https://duckduckgo.com/?q=!wayback+%search%
 start "" https://duckduckgo.com/?q=!redditold+%search%
 start "" https://www.searchblogspot.com/search?q=%search%
 start "" https://www.peteyvid.com/index.php?q=%search%
-start "" https://www.etools.ch/searchSubmit.do?query=%search%
+start "" https://metager.org/meta/meta.ger3?eingabe=%search%
 start "" http://socialmention.com/search?q=%search%"&"t=all"&"btnG=Search
-start "" https://peekier.com/#!%search%
+start "" https://www.etools.ch/searchSubmit.do?query=%search%
 start "" https://search.carrot2.org/#/search/web/%search%/treemap
-
+start "" https://peekier.com/#!%search%
 )   
 
   
@@ -3941,6 +3946,10 @@ echo If SFC found some errors and could not repair, re-run the script after a re
 echo --------------------------------------------------------------------------------
 wuauclt / detectnow / updatenow
 timeout 10
+powercfg -restoredefaultschemes
+net start wuauserv
+net start WSearch
+net start wscsvc
 color AE
 goto begin
 
@@ -3991,6 +4000,7 @@ cls
 
 powershell.exe -command "Set-MpPreference -DisableRealtimeMonitoring $false"
 
+TASKKILL /F /IM IntelSoftwareAssetManagerService.exe /T
 TASKKILL /F /IM adb.exe /T
 TASKKILL /F /IM chrome.exe /T
 TASKKILL /F /IM brave.exe /T
@@ -4001,6 +4011,7 @@ TASKKILL /F /IM CNAP3LAK.EXE /T
 TASKKILL /F /IM _3325443429ABB3D703160B.exe /T
 TASKKILL /F /IM _06BA6A1DCCA67DB94B463F.exe /T
 TASKKILL /F /IM cscript.exe /T
+TASKKILL /F /IM wscript.exe /T
 taskkill /F /IM  rundll32.exe /T
 taskkill /F /IM  PowerShell_ISE.exe /T
 taskkill /F /IM  powershell.exe /T
