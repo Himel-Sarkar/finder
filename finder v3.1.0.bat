@@ -114,7 +114,8 @@ echo 28) Option 28 (Ultimate Forensics Outflow)
 echo 29) Option 29 (Dart Forensics Tool)
 echo 30) Option 30 (Ngrok,file compressor)
 echo 31) Option 31(Phonesploit for windows 10​)
-echo 32) Option 32(Exit)
+echo 32) Option 32(Arpanet-Multi-Tool--main)
+echo 33) Option 33(Exit)
 echo -
 set /p op=Type option:
 if "%op%"=="1" goto op1
@@ -148,7 +149,8 @@ if "%op%"=="28" goto Win-UFO
 if "%op%"=="29" goto dart
 if "%op%"=="30" goto if-ngrok
 if "%op%"=="31" goto psploit
-if "%op%"=="32" goto op32
+if "%op%"=="32" goto Arpanet-Multi-Tool-main
+if "%op%"=="33" goto op333
 echo Please Pick an option:
 goto begin
 
@@ -931,11 +933,12 @@ goto begin
 
 
 :op9
+cls
 echo Copy past pptp vpn from vpnbook.com to your vpn sitting 
 start ms-settings:network-vpn
 start "" https://www.vpnbook.com/freevpn
 
-pause
+pause > nul
 cls
 echo you picked option 9
 
@@ -6274,11 +6277,109 @@ echo Install successful
 
 
 
+:Arpanet-Multi-Tool-main
+COLOR ec
+Set aj6x=H3v7b0h5ApBXMjNw8nZzqdrPDoJUO2SL4eGItyCkYKuEfRxVlis1aQW9T6gmFc
+cls
+%aj6x:~36,1%%aj6x:~49,1%%aj6x:~36,1%%aj6x:~48,1%%aj6x:~33,1% %aj6x:~38,1%%aj6x:~22,1%%aj6x:~33,1%%aj6x:~52,1%%aj6x:~36,1%%aj6x:~33,1%%aj6x:~21,1% %aj6x:~4,1%%aj6x:~37,1% %aj6x:~0,1%%aj6x:~49,1%%aj6x:~59,1%%aj6x:~33,1%%aj6x:~48,1% %aj6x:~30,1%%aj6x:~52,1%%aj6x:~22,1%%aj6x:~39,1%%aj6x:~52,1%%aj6x:~22,1% (%aj6x:~49,1%%aj6x:~17,1%%aj6x:~50,1%%aj6x:~36,1%%aj6x:~52,1% %aj6x:~49,1%%aj6x:~21,1%: %aj6x:~6,1%%aj6x:~49,1%%aj6x:~59,1%%aj6x:~33,1%%aj6x:~48,1%%aj6x:~50,1%%aj6x:~52,1%%aj6x:~22,1%%aj6x:~39,1%%aj6x:~52,1%%aj6x:~22,1%%aj6x:~51,1%%aj6x:~1,1%%aj6x:~3,1%)
+
+cls
+echo checking file structure...
+if exist "%Temp%\a\main\Arpanet-Multi-Tool--main\PainelMultiTool.bat" (
+if exist "%Temp%\a\main\Arpanet-Multi-Tool--main\PainelMultiTool.bat" (
+cd \
+
+cd %temp%\a
+start "" https://www.youtube.com/embed/uiH_Lb4CMTY
+start %Temp%\a\main\Arpanet-Multi-Tool--main\PainelMultiTool.bat
+exit
+cls
 
 
-:op32
+pause
+
+cls
+goto Arpanet-Multi-Tool-main
+goto ok
+)
+)
+
+if not exist "%temp%\a\main.zip" (
+if not exist "%temp%\a\main.zip" (
+goto download
+)
+)
+if not exist "%temp%\a\main.zip" (
+goto download
+)
+)
+
+if not exist "%temp%\a\main.zip" (
+goto download
+)
+)
+:download
+echo downloading missing files.
+cd \
+cd %temp%
+mkdir a
+cd a
+
+curl.exe -L "https://github.com/Himel-Sarkar/Arpanet-Multi-Tool-/archive/refs/heads/main.zip" > "main.zip"
+
+cd\
+cd %temp%\a
+
+
+
+set mypath=%cd%\main.zip
+Call :UnZipFile "%temp%\a\main" "%mypath%"
+exit /b
+
+:UnZipFile <ExtractTo> <newzipfile>
+set vbs="%temp%\_.vbs"
+if exist %vbs% del /f /q %vbs%
+>>%vbs%  echo Set fso = CreateObject("Scripting.FileSystemObject")
+>>%vbs% echo If NOT fso.FolderExists(%1) Then
+>>%vbs% echo fso.CreateFolder(%1)
+>>%vbs% echo End If
+>>%vbs% echo set objShell = CreateObject("Shell.Application")
+>>%vbs% echo set FilesInZip=objShell.NameSpace(%2).items
+>>%vbs% echo objShell.NameSpace(%1).CopyHere(FilesInZip)
+>>%vbs% echo Set fso = Nothing
+>>%vbs% echo Set objShell = Nothing
+cscript //nologo %vbs%
+if exist %vbs% del /f /q %vbs%
+
+
+
+cd \
+
+cd %temp%\a
+start "" https://www.youtube.com/embed/uiH_Lb4CMTY
+start %Temp%\a\main\Arpanet-Multi-Tool--main\PainelMultiTool.bat
+exit
+cd ..
+echo %cd%
+pause
+erase /Q *.*
+cls
+echo for close it(PainelMultiTool) press enter
+pause
+
+cls
+goto Arpanet-Multi-Tool-main
+
+:ok
+echo Install successful
+
+
+
+
+
+:op333
 Exit
-echo you picked option 32
+echo you picked option 33
 goto begin
 :exit
 @exit
