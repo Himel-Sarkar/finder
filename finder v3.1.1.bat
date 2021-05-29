@@ -3460,11 +3460,9 @@ if %choice%=="" (
 goto se
 )  
 if %choice%==0 (
-start brave --incognito --tor "http://torlinkswwqg3lwt.onion/index.php?cat=Markets"
-start brave --incognito --tor "http://deeeepv4bfndyatwkdzeciebqcwwlvgqa6mofdtsvwpon4elfut7lfqd.onion/"
-start brave --incognito --tor "http://e6wzjohnxejirqa2sgridvymv2jxhrqdfuyxvoxp3xpqh7kr4kbwpwad.onion/"
-start "" https://start.me/p/b56G5Q/search-engines
-start "" https://www.deepwebtech.com/?s=biznar.com
+
+
+start brave --incognito --tor  "https://start.me/p/b56G5Q/search-engines"
 start brave --incognito http://oleuniversity.com/
 start brave --incognito https://duckduckgo.com/?q=TorLinks"&"t=brave"&"ia=web"&"iai=r1-14"&"page=2"&"sexp=%7B%22biaexp%22%3A%22b%22%2C%22msvrtexp%22%3A%22b%22%7D
 start brave --incognito https://github.com/jivoi/awesome-osint
@@ -3474,15 +3472,15 @@ start brave --incognito --tor "www.dropbox.com/sh/wdleu9o7jj1kk7v/AACmlkoLQCGQ8V
 start brave --incognito --tor "https://theonionweb.com/thehiddenwiki"
 start brave --incognito --tor  "https://darkweb.wtf"
 start brave --incognito --tor  "https://www.raptor.life"
-start brave --incognito --tor  "http://pvhwsb7a3d2oq73xtr3pzvmrruvswyqgkyahcb7dmbbfftr4qtsmvjid.onion/"
-rem trust 
-start brave --incognito --tor  "http://dntrustmucd4mwec.onion/?q="
-rem multiple deep web search engine
-start brave --incognito --tor  "http://tgs5dkeqkg5hrjjk.onion/tgs/"
-start brave --incognito --tor  "http://7pwy57iklvt6lyhe.onion/"
-start brave --incognito --tor  "http://searchesqafmar2ocusr443hnolhmrxek5xu3hrw3wliwlzmdywvjtqd.onion/"
-start brave --incognito --tor  "http://hiddenwwiqg2jb5s3wyvzxeipcl5ese2pa2cqnu6myi3d5bcmhmdagqd.onion/"
-start brave --incognito --tor  "http://venusoseaqnafjvzfmrcpcq6g47rhd7sa6nmzvaa4bj5rp6nm5jl7gad.onion/"
+
+
+
+cd %USERPROFILE%
+rem                                                 tor link list (marketplace)                            Deeplink Onion Directory                                                 TorNode                                                                  Onion Scanner                                                             DarkNet trust                      tornet global search                 tor Search Engine                                                        The Hidden Wiki                                                           Venus Onion Search Engine                                              
+ start "" "Desktop\Tor Browser\Browser\firefox.exe" "http://torlinkswwqg3lwt.onion/index.php?cat=Markets" "http://deeeepv4bfndyatwkdzeciebqcwwlvgqa6mofdtsvwpon4elfut7lfqd.onion/" "http://e6wzjohnxejirqa2sgridvymv2jxhrqdfuyxvoxp3xpqh7kr4kbwpwad.onion/" "http://pvhwsb7a3d2oq73xtr3pzvmrruvswyqgkyahcb7dmbbfftr4qtsmvjid.onion/" "http://dntrustmucd4mwec.onion/?q=" "http://tgs5dkeqkg5hrjjk.onion/tgs/" "http://searchesqafmar2ocusr443hnolhmrxek5xu3hrw3wliwlzmdywvjtqd.onion/" "http://hiddenwwiqg2jb5s3wyvzxeipcl5ese2pa2cqnu6myi3d5bcmhmdagqd.onion/" "http://venusoseaqnafjvzfmrcpcq6g47rhd7sa6nmzvaa4bj5rp6nm5jl7gad.onion/" 
+
+
+
 goto se
 )
 if %choice%==18 (
