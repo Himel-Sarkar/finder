@@ -4039,7 +4039,7 @@ goto op16
 color 3b
 cls
 
-powershell.exe -command "Set-MpPreference -DisableRealtimeMonitoring $false"
+
 
 TASKKILL /F /IM tor.exe /T
 TASKKILL /F /IM firefox.exe /T
@@ -4061,7 +4061,6 @@ taskkill /F /IM  powershell.exe /T
 taskkill /F /IM  SbieCtrl.exe /T
 taskkill /F /IM  spoolsv.exe /T
 taskkill /F /IM  sshd.exe /T
-taskkill /F /IM  SbieCtrl.exe /T
 taskkill /F /IM  BijoyBayanno.exe /T
 taskkill /F /IM "Creative Cloud.exe" /T
 taskkill /F /IM OfficeClickToRun.exe /T
@@ -4116,7 +4115,7 @@ ipconfig /registerdns
 
 tree  
 
-timeout 10
+timeout 1
 
 
 RD "%TMP%" /S /Q
@@ -4270,7 +4269,8 @@ rmdir “%systemroot%\Prefetch\” /s /q
 mkdir "%systemroot%\Prefetch\"
 
 cls
-sfc /SCANNOW
+powershell.exe -command "Set-MpPreference -DisableRealtimeMonitoring $false"
+start cmd.exe @cmd /k "sfc /SCANNOW & exit"
 goto op16
 
 :NOCON
