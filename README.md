@@ -1,4 +1,4 @@
-<h1>HOW TO INSTALL WINDOWS</h1>
+<h1>HOW TO INSTALL FINDER IN WINDOWS</h1>
 <p>(1) Download Finder from here --&gt;&gt;https://github.com/Himel-Sarkar/finder/archive/refs/heads/main.zip</p>
 <p>(2) Extract it</p>
 <p>(3) Double click finder v3.1.0.bat</p>
