@@ -4002,13 +4002,14 @@ echo =============
 echo -
 echo 1) Option 1(clean-win10)
 echo 2) Option 2(remove old win)[need internet]
-echo 3) Option 3(Exit)
+echo 3) Option 3(Win Activation)[need internet]
+echo 4) Option 4(Exit)
 echo -
 set /p op=Type option:
 if "%op%"=="1" goto clean-windows10
 if "%op%"=="2" goto remove-old-windows
-
-if "%op%"=="3" goto cl-win-op5
+if "%op%"=="3" goto win_key
+if "%op%"=="4" goto cl-win-op5
 if "%op%"=="" goto begin
 
 
@@ -4326,8 +4327,25 @@ exit
 goto op16
 
 
+
+:win_key
+
+cls
+
+
+curl.exe -L "https://raw.githubusercontent.com/Himel-Sarkar/windows_old_file_clean_up/main/win_key.bat" > "Click_win_activate_key.bat"  
+
+
+
+
+
+
+goto op16
+
+
+
 :cl-win-op5
-echo you picked option 3
+echo you picked option 4
 cls
 goto begin
 
