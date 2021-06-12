@@ -4025,13 +4025,15 @@ echo -
 echo 1) Option 1(clean-win10)
 echo 2) Option 2(remove old win)[need internet]
 echo 3) Option 3(Win Activation)[need internet]
-echo 4) Option 4(Exit)
+echo 4) Option 4(tron script)[need internet]
+echo 5) Option 5(Exit)
 echo -
 set /p op=Type option:
 if "%op%"=="1" goto clean-windows10
 if "%op%"=="2" goto remove-old-windows
 if "%op%"=="3" goto win_key
-if "%op%"=="4" goto cl-win-op5
+if "%op%"=="4" goto tron
+if "%op%"=="5" goto cl-win-op5
 if "%op%"=="" goto begin
 
 
@@ -4367,6 +4369,20 @@ curl.exe -L "https://raw.githubusercontent.com/Himel-Sarkar/windows_old_file_cle
 
 goto op16
 
+
+:tron
+
+cls
+
+
+curl.exe -LO "https://github.com/Himel-Sarkar/tron/archive/refs/heads/master.zip"  
+
+
+
+
+
+
+goto op16
 
 
 :cl-win-op5
