@@ -5945,7 +5945,7 @@ echo 1) Option 1(ngrok)
 echo 2) Option 2(File Sahre)
 echo 3) Option 3(netcat)
 echo 4) Option 4(Online File Compressor)
-echo 5) Option 5(Kraken_v1.5)[unzip Cracker]
+echo 5) Option 5(Kraken_v1.5)[zip Cracker]
 echo 6) Option 6(Exit)
 echo -
 set /p op=Type option:
