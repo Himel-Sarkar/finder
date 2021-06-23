@@ -3640,7 +3640,7 @@ start "" https://searchcode.com/?q=%search%
 start "" https://www.codeproject.com/search.aspx?q=%search%
 start "" https://github.com/search?q=%search%
 start "" https://stackoverflow.com/search?q=%search%
-start "" https://www.google.com/search?tbm=bks&q=%search%
+start "" https://www.google.com/search?tbm=bks"&"q=%search%
 start "" https://superuser.com/search?q=%search%
 start "" https://opensearch.krugle.org/document/search/?query=%search%
 start "" https://snipplr.com/all?search=%search%
