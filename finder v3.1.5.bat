@@ -3442,7 +3442,7 @@ echo  1. yandex
 echo  2. duckduckgo
 echo  3. yahoo
 echo  4. google
-echo  5. bing
+echo  5. Free_Premium_Leeches (Premium link free downloader)
 echo  6. social-searcher
 echo  7. keywordshitter (Keyword Descover/Grabbing Combos)
 echo  8. reddit
@@ -3520,6 +3520,10 @@ if %choice%==7 (
 start "" https://www.keywordshitter.com/
 goto se
 )
+if %choice%==5 (
+start "" https://filehostlist.miraheze.org/wiki/Free_Premium_Leeches/W
+goto se
+)
 
 echo enter your search terms
 
@@ -3548,10 +3552,9 @@ start "" https://search.yahoo.com/search?p=%search%
 )
 if %choice%==4 (
 start "" https://images.google.com/?q=%search%
-)
-if %choice%==5 (
 start "" https://www.bing.com/search?q=%search%
 )
+
 if %choice%==6 (
 start "" https://www.social-searcher.com/google-social-search/?q=%search%
 
