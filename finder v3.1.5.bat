@@ -5567,7 +5567,7 @@ cd \
 cd %temp%
 
 
-curl.exe -L "https://drive.google.com/uc?export=download&confirm=KBsu&id=1TwYSAJb2xFGTQBSR_pv1bsOIN5AB2h37" > "hidden_process_finder_portable.zip"
+curl.exe -L "https://downloads.novirusthanks.org/files/portables/hidden_process_finder_portable.zip" > "hidden_process_finder_portable.zip"
 
 cd\
 cd %temp%
