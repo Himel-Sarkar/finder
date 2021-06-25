@@ -3484,7 +3484,7 @@ goto se
 )  
 if %choice%==0 (
 
-
+start brave --incognito --tor  "https://search.mediasova.com/en/buy"
 start brave --incognito --tor  "https://start.me/p/b56G5Q/search-engines"
 start brave --incognito http://oleuniversity.com/
 start brave --incognito https://duckduckgo.com/?q=TorLinks"&"t=brave"&"ia=web"&"iai=r1-14"&"page=2"&"sexp=%7B%22biaexp%22%3A%22b%22%2C%22msvrtexp%22%3A%22b%22%7D
@@ -3649,6 +3649,7 @@ start "" https://publicwww.com/websites/%search%
 start "" https://scholar.google.com/scholar?hl=%search%
 start "" https://www.searchblogspot.com/search?q=%search%
 
+
 ) 
 if %choice%==17 (
 start "" https://www.nerdydata.com/reports/new
@@ -3761,6 +3762,26 @@ taskkill /F /IM firefox.exe
 taskkill /F /IM geckodriver.exe
 taskkill /F /IM chromedriver.exe
 taskkill /F /IM msedge.exe
+TASKKILL /F /IM browser.exe /T
+TASKKILL /F /IM tor.exe /T
+
+TASKKILL /F /IM wscript.exe /T
+TASKKILL /F /IM cscript.exe /T
+TASKKILL /F /IM BraveUpdate.exe /T
+TASKKILL /F /IM GoogleUpdate.exe /T
+TASKKILL /F /IM OfficeClickToRun.exe /T
+TASKKILL /F /IM IntelSoftwareAssetManagerService.exe /T
+TASKKILL /F /IM WaaSMedicAgent.exe /T
+TASKKILL /F /IM software_reporter_tool.exe /T
+TASKKILL /F /IM DLLHOST.EXE /T
+TASKKILL /F /IM UiPath.RobotJS.UserHost.exe /T
+TASKKILL /F /IM AdobeUpdateService.exe /T
+TASKKILL /F /IM armsvc.exe /T
+TASKKILL /F /IM spoolsv.exe /T
+TASKKILL /F /IM powershell.exe /T
+TASKKILL /F /IM MicrosoftEdgeUpdate.exe /T
+TASKKILL /F /IM service_update.exe /T
+
 cls
 goto vu
 )
@@ -3915,8 +3936,20 @@ start "" https://cse.google.com/cse?cx=006368593537057042503:efxu7xprihg#gsc.tab
 start "" https://ghostproject.fr/
 )  
  if %choice%==12 (
-start "" https://github.com/search?q=%v%
-start "" https://www.kitploit.com/search/max-results=1000?q=%v%
+start brave --incognito --tor https://github.com/search?q=%v%
+start brave --incognito --tor https://www.kitploit.com/search/max-results=1000?q=%v%
+start brave --incognito --tor https://hackaday.io/search?term=%v%
+start brave --incognito --tor https://technet24.ir/?s=%v%
+start brave --incognito --tor https://www.google.com/search?as_q=%v%"&"as_sitesearch=packetstormsecurity.com
+start brave --incognito --tor https://yandex.ua/search/?text=site:hackingloops.com%%20%v%
+start brave --incognito --tor https://yandex.ua/search/?text=site:shanghaiblackgoons.com%%20%v%
+start brave --incognito --tor https://www.hackingtools.in/?s=%v%
+start brave --incognito --tor https://www.itjd.in/?s=%v%
+start brave --incognito --tor https://www.securedyou.com/?s=%v%
+start brave --incognito --tor https://androtricks.com/?s=%v%
+start brave --incognito --tor https://www.connect-trojan.com/?search=%v%
+start brave --incognito --tor https://infected-zone.com/search/13208/?q=%v%
+start brave --incognito --tor https://cy-team.com/cc/search/8493/?q=%v%
 
 )  
 if %choice%==13 (
@@ -3925,9 +3958,10 @@ start "" https://search.wikileaks.org/?query=%v%"&"exact_phrase="&"any_of="&"exc
  if %choice%==14 (
 start "" https://www.google.com/search?as_q=%v%"&"as_qdr=all"&"as_sitesearch=trustwave.com
 start "" https://www.google.com/search?as_q=%v%"&"as_qdr=all"&"as_sitesearch=offensive-security.com
-start "" https://www.google.com/search?as_q=%v%"&"as_qdr=all"&"as_sitesearch=irongeek.com
+start brave --incognito --tor https://yandex.ua/search/?text=site:irongeek.com%%20%v%
 start brave --incognito --tor "https://www.peteyvid.com/index.php?q=%v%"
-start brave --incognito --tor "https://www.google.com/search?q=%v%+site:securitytube.net"
+start brave --incognito --tor https://yandex.ua/search/?text=site:securitytube.net%%20%v%
+start brave --incognito --tor https://yandex.ua/search/?text=site:hellboundhackers.org%%20%v%
 start "" https://hideandsec.sh/search?term=%v%
 start "" https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=%v%
 start "" https://www.seebug.org/search/?keywords=%v%
@@ -3944,6 +3978,10 @@ start "" https://search.wikileaks.org/?query=%v%"&"exact_phrase="&"any_of="&"exc
 start "" https://www.cvedetails.com/google-search-results.php?q=%v%
 start "" https://securityonline.info/search_gcse/?q=%v%
 start "" https://owasp.org/search/?searchString=%v%
+start "" https://www.hackingarticles.in/?s=%v%
+start "" https://www.hacking-tutorial.com/?s=%v%
+start "" https://www.hacknos.com/?s=%v%
+
 
 
 )  
