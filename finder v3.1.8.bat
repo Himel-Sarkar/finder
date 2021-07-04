@@ -3815,6 +3815,7 @@ start brave --incognito --tor https://soft98.ir/?do=%search%
 
 ) 
 if %choice%==16 (
+start "" https://www.izito.com/?q=%search%
 start "" https://grep.app/search?q=%search%
 start "" https://searchcode.com/?q=%search%
 start "" https://www.codeproject.com/search.aspx?q=%search%
@@ -3872,12 +3873,13 @@ start "" http://netbootcamp.org/pastesearch.html#search"&"gsc.tab=0"&"gsc.q=%sea
 start "" https://www.qwant.com/?q=%search%
 start "" https://cse.google.com/cse?cx=006368593537057042503:efxu7xprihg#gsc.tab=0"&"gsc.q=%search%"&"gsc.sort=
 start "" https://www.mojeek.co.uk/search?q=%search%
-
+start "" https://www.izito.com/?q=%search%
 start "" https://duckduckgo.com/?q=!dogpile+%search%
 start "" https://duckduckgo.com/?q=!googlebooks+%search%
 start "" https://duckduckgo.com/?q=!googlescholar+%search%
 start "" https://duckduckgo.com/?q=!wayback+%search%
 start "" https://duckduckgo.com/?q=!redditold+%search%
+start "" https://results.dogpile.com/serp?q=%search%
 start "" https://www.searchblogspot.com/search?q=%search%
 start "" https://www.peteyvid.com/index.php?q=%search%
 
@@ -3930,7 +3932,7 @@ echo  8.  nvd.nist
 echo  9.  quetext(Copy Documents)[document-osint]
 echo  10. netbootcamp(pastesearch)[use proxy]
 echo  11. ghostproject(find password)
-echo  12. github,kitploit(find framework's)
+echo  12. github,kitploit(find framework's)[Hacking Tools]
 echo  13. wikileaks
 echo  14. Bulk
 echo  15. Close all browser
@@ -4119,6 +4121,9 @@ start "" https://ghostproject.fr/
  if %choice%==12 (
 start brave --incognito --tor https://github.com/search?q=%v%
 start brave --incognito --tor https://www.kitploit.com/search/max-results=1000?q=%v%
+start brave --incognito --tor https://geekychild.com/?s=%v%
+start brave --incognito --tor https://professionalhackers.in/?s=%v%
+start brave --incognito --tor https://www.darknet.org.uk/?s=%v%"&"submit=Search
 start brave --incognito --tor https://hackaday.io/search?term=%v%
 start brave --incognito --tor https://technet24.ir/?s=%v%
 start brave --incognito --tor https://www.google.com/search?as_q=%v%"&"as_sitesearch=packetstormsecurity.com
@@ -4131,6 +4136,7 @@ start brave --incognito --tor https://androtricks.com/?s=%v%
 start brave --incognito --tor https://www.connect-trojan.com/?search=%v%
 start brave --incognito --tor https://infected-zone.com/search/13208/?q=%v%
 start brave --incognito --tor https://cy-team.com/cc/search/8493/?q=%v%
+
 
 )  
 if %choice%==13 (
