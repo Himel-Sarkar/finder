@@ -374,6 +374,7 @@ echo .                              46.165.222.212                             .
 echo ...........................................................................
 if not exist %cd%\blockit.txt type nul > blockit.txt
 write blockit.txt
+
 goto ipblock
 
 :show_rule_Blockit
@@ -389,6 +390,7 @@ netsh advfirewall firewall delete rule name="Blockit"
 goto ipblock
 
 :Block_new_ips_while_reading_them_from_blockit.txt
+sort /C /UNIQUE "blockit.txt" /O "blockit.txt"
 cls
 echo Block new ips while reading them from blockit.txt
 for /f %%i in (blockit.txt) do (
@@ -3818,6 +3820,8 @@ start brave --incognito --tor https://soft98.ir/?do=%search%
 if %choice%==16 (
 start "" https://www.izito.com/?q=%search%
 start "" https://grep.app/search?q=%search%
+start "" https://www.codegrepper.com/search.php?q=%search%
+start "" https://exceptionshub.com/?s=%search%
 start "" https://searchcode.com/?q=%search%
 start "" https://www.codeproject.com/search.aspx?q=%search%
 start "" https://github.com/search?q=%search%
@@ -3868,33 +3872,36 @@ start "" https://filelisting.com/result?q="%b%"
 if %choice%==22 (
 color 2E
 
-start brave --incognito http://netbootcamp.org/pastesearch.html#search"&"gsc.tab=0"&"gsc.q=%search%
+start "" http://netbootcamp.org/pastesearch.html#search"&"gsc.tab=0"&"gsc.q=%search%
+start "" http://www.blogsearchengine.org/search.html?cx=partner-pub-9634067433254658%3A5laonibews6"&"cof=FORID%3A10"&"ie=ISO-8859-1"&"q=%search%"&"sa.x=37"&"sa.y=5"&"siteurl=
+start "" https://www.social-searcher.com/google-social-search/?q=%search%
+start "" https://cse.google.com/cse?cx=006368593537057042503:efxu7xprihg#gsc.tab=0"&"gsc.q=%search%"&"gsc.sort=
+start "" https://www.mojeek.co.uk/search?q=%search%
+start "" https://www.izito.com/?q=%search%
+start "" https://duckduckgo.com/?q=!googlebooks+%search%
+start "" https://duckduckgo.com/?q=!googlescholar+%search%
+start "" https://duckduckgo.com/?q=!wayback+%search%
+start "" https://duckduckgo.com/?q=!redditold+%search%
+start "" https://results.dogpile.com/serp?q=%search%
+start "" https://www.searchblogspot.com/search?q=%search%
+start "" https://www.peteyvid.com/index.php?q=%search%
+start "" http://socialmention.com/search?q=%search%"&"t=all"&"btnG=Search
+start "" https://metager.org/meta/meta.ger3?eingabe=%search%
+start "" https://www.metacrawler.com/serp?q=%search%
+start "" https://www.etools.ch/searchSubmit.do?query=%search%
+start "" https://search.carrot2.org/#/search/web/%search%/treemap
 
-start brave --incognito --tor https://www.social-searcher.com/google-social-search/?q=%search%
+start "" https://search.naver.com/search.naver?where=nexearch"&"sm=top_hty"&"fbm=1"&"ie=utf8"&"query=%search%
 
+start "" https://www.google.com/search?as_st=y"&"tbm=isch"&"as_q=%search%
 
-start brave --incognito --tor https://cse.google.com/cse?cx=006368593537057042503:efxu7xprihg#gsc.tab=0"&"gsc.q=%search%"&"gsc.sort=
-start brave --incognito --tor https://www.mojeek.co.uk/search?q=%search%
-start brave --incognito --tor https://www.izito.com/?q=%search%
-start brave --incognito --tor https://duckduckgo.com/?q=!dogpile+%search%
-start brave --incognito --tor https://duckduckgo.com/?q=!googlebooks+%search%
-start brave --incognito --tor https://duckduckgo.com/?q=!googlescholar+%search%
-start brave --incognito --tor https://duckduckgo.com/?q=!wayback+%search%
-start brave --incognito --tor https://duckduckgo.com/?q=!redditold+%search%
-start brave --incognito --tor https://results.dogpile.com/serp?q=%search%
-start brave --incognito --tor https://www.searchblogspot.com/search?q=%search%
-start brave --incognito --tor https://www.peteyvid.com/index.php?q=%search%
+start "" https://www.qwant.com/?t=images"&"q=%search%
 
-start brave --incognito --tor http://socialmention.com/search?q=%search%"&"t=all"&"btnG=Search
-start brave --incognito --tor https://metager.org/meta/meta.ger3?eingabe=%search%
-start brave --incognito --tor https://www.metacrawler.com/serp?q=%search%
-start brave --incognito --tor https://www.etools.ch/searchSubmit.do?query=%search%
-start brave --incognito --tor https://search.carrot2.org/#/search/web/%search%/treemap
-start brave --incognito --tor https://www.google.com/search?as_st=y"&"tbm=isch"&"as_q=%search%
-start brave --incognito --tor https://www.qwant.com/?t=images"&"q=%search%
-start brave --incognito --tor https://image.baidu.com/search/index?tn=baiduimage"&"fm=result"&"ie=utf-8"&"word=%search%
-start brave --incognito --tor https://yandex.com/images/search?text=%search%
-start brave --incognito --tor https://peekier.com/#!%search%
+start "" https://image.baidu.com/search/index?tn=baiduimage"&"fm=result"&"ie=utf-8"&"word=%search%
+
+start "" https://yandex.com/images/search?text=%search%
+
+start "" https://peekier.com/#!%search%
 )   
 
   
